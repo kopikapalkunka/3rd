@@ -213,7 +213,7 @@ export default function CelebrationPage() {
       </motion.div>
 
       {/* Floating sparkles */}
-      {[...Array(10)].map((_, i) => (
+      {typeof window !== 'undefined' && [...Array(10)].map((_, i) => (
         <motion.div
           key={i}
           initial={{ scale: 0, rotate: 0 }}
