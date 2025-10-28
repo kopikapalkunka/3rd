@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💞 Our Anniversary - Romantic Anniversary Web App
 
-## Getting Started
+A beautiful, modern anniversary web application for **Annas Tasya Esti Aryus Jannah** & **Achmad Rizal Efendy** celebrating their love story.
 
-First, run the development server:
+## ✨ Features
+
+### 🔐 PIN-Based Authentication
+- **Annas**: PIN `29102022` (ddmmyyyy)
+- **Achmad**: PIN `20221029` (yyyymmdd)
+
+### 🎯 Core Features
+- ⏳ **Live Countdown Timer** to next anniversary
+- 🖼️ **Parallax Timeline Gallery** with your memories
+- 💌 **Real-Time Notes Board** - share love notes
+- ❤️ **Heart Ping** - send love with particle effects & confetti
+- 💬 **Real-Time Chat** - stay connected
+- 🎵 **Music Player** - 8 romantic songs ready to play
+- 💚 **Mood Tracker** - share how you're feeling
+- 📸 **Photo Upload** - upload memories (Firebase Storage)
+- 🌓 **Dark/Light Theme** - beautiful for day and night
+- 🎊 **Celebration Page** - special surprise when countdown ends!
+
+---
+
+## 🚀 Tech Stack
+
+- **Next.js 15** (App Router)
+- **TypeScript**
+- **TailwindCSS 4**
+- **Framer Motion** - Beautiful animations
+- **Firebase** - Firestore & Storage
+- **Zustand** - State management
+- **React Howler** - Audio support
+- **Canvas Confetti** - Celebration effects
+
+---
+
+## 📦 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Start development server
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Setup Firebase
 
-## Learn More
+1. Create `.env.local` file with your Firebase credentials
+2. Enable **Firestore Database** in Firebase Console
+3. Enable **Storage** in Firebase Console
+4. Update Storage Rules (see below)
 
-To learn more about Next.js, take a look at the following resources:
+### Firebase Storage Rules
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```javascript
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎵 Music
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Place MP3 files in `public/music/` directory. 8 songs are already configured!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📁 Project Structure
+
+```
+lv/
+├── app/
+│   ├── celebration/    # Special celebration page
+│   ├── dashboard/      # Main dashboard
+│   ├── layout.tsx
+│   └── page.tsx        # Login page
+├── components/          # All UI components
+├── lib/                # Firebase & store config
+├── hooks/              # Custom React hooks
+├── types/              # TypeScript types
+├── utils/              # Helper functions
+└── public/
+    └── music/          # Music files
+```
+
+---
+
+## 🎨 Features in Detail
+
+### Celebration Page
+When countdown ends, users are redirected to a beautiful celebration page featuring:
+- Heartfelt love letter
+- Romantic quotes
+- Three sequential popups
+- Confetti animations
+- Personalized for Annas & Achmad
+
+### Mood Tracker
+Share your mood in real-time with your partner:
+- ❤️ In Love
+- 😊 Happy
+- 😔 Sad
+- 🌧️ Rainy
+- ☀️ Sunny
+
+### Music Player
+- 8 romantic songs ready
+- Play/pause control
+- Volume control
+- Next/previous track
+- Auto-play support
+
+---
+
+## 🚀 Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/YOUR_REPO)
+
+1. Push to GitHub
+2. Import to Vercel
+3. Add environment variables
+4. Deploy!
+
+---
+
+## 💕 Love Story
+
+This app celebrates the beautiful love story between:
+- **Annas Tasya Esti Aryus Jannah** 💕
+- **Achmad Rizal Efendy**
+
+Every moment together is precious. This is for you both. 💑
+
+---
+
+## 📝 License
+
+Made with ❤️ for a beautiful couple.
+
+---
+
+**Happy Anniversary! May your love story continue forever.** ✨

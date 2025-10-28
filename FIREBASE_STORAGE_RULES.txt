@@ -1,0 +1,18 @@
+# Copy and paste this into Firebase Console → Storage → Rules
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
+}
+
+# Instructions:
+# 1. Go to: https://console.firebase.google.com/project/lupe-ca39c/storage/rules
+# 2. Delete everything
+# 3. Paste the above code
+# 4. Click "Publish"
+# 5. Wait for confirmation
+

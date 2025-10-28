@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fef7f7;
+  --foreground: #2d1b2e;
+  
+  /* Romantic Palette */
+  --rose-pink: #ff6b9d;
+  --soft-lilac: #c8a2c8;
+  --champagne-gold: #f7d794;
+  --night-sky: #2c3e50;
+  --pearl: #f8f8ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-rose: var(--rose-pink);
+  --color-lilac: var(--soft-lilac);
+  --color-gold: var(--champagne-gold);
+  --color-night: var(--night-sky);
+  --color-pearl: var(--pearl);
+  --font-sans: var(--font-poppins);
+  --font-romantic: var(--font-dancing);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-dark {
+  background: rgba(45, 27, 46, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient backgrounds */
+.romantic-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.rose-gradient {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.champagne-gradient {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.romantic-font {
+  font-family: var(--font-dancing), cursive;
+}
+
+/* Scroll animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes vibrate {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-heart {
+  animation: pulse-heart 1.5s ease-in-out infinite;
+}
+
+.vibrate {
+  animation: vibrate 0.3s ease-in-out;
+}
+
+/* Heart particles */
+@keyframes heart-float {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1);
+    opacity: 0;
+  }
+}
+
+.heart-particle {
+  animation: heart-float 3s ease-out forwards;
+}
+
+/* Dark mode styles */
+.dark {
+  --background: #1a1a2e;
+  --foreground: #f0f0f0;
+}
+
+.dark body {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%) !important;
+}
+
+.dark .glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dark .text-rose-700 {
+  color: #ff8fa3;
+}
+
+.dark .text-gray-600 {
+  color: #c8c8c8;
+}
+
+.dark .text-gray-800 {
+  color: #e0e0e0;
+}
+
+.dark .bg-rose-50 {
+  background-color: rgba(255, 239, 243, 0.1);
+}
+
+.dark .bg-purple-50 {
+  background-color: rgba(250, 245, 255, 0.1);
 }

@@ -1,0 +1,13 @@
+# Paste your Firebase config here (after clicking Register app):
+# 
+# It will look like this:
+#
+# apiKey: "AIzaSy..."
+# authDomain: "..."
+# projectId: "..."
+# storageBucket: "..."
+# messagingSenderId: "..."
+# appId: "..."
+#
+# Copy those 6 values and paste them below:
+
